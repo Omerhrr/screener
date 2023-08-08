@@ -1,4 +1,5 @@
-import streamlit as st, pandas as pd, numpy as np, yfinance as yf 
+import streamlit as st, pandas as pd, numpy as np
+import yfinance as yf 
 import plotly.express as px 
 import numpy as np
 from alpha_vantage.fundamentaldata import FundamentalData
