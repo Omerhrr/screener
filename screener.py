@@ -87,6 +87,35 @@ def make_voice_call(recipient):
     except Exception as e:
         st.error(f"Error making Voice Call: {e}")
 
+ sms_alert, bulk_sms_alert, voice_call_alert = st.columns(3)
+try:
+    with sms_alert:
+            st.header("SMS Alerts")
+            recipient_sms = st.text_input("Recipient's Phone Number (SMS)")
+            message_sms = st.text_area("Alert Message (SMS)")
+            if st.button("Send SMS Alert"):
+                send_sms_alert(recipient_sms, message_sms)
+
+        # Bulk SMS Alert
+        with bulk_sms_alert:
+            st.header("Bulk SMS Alerts")
+            recipients_bulk_sms = st.text_area("Recipients (Bulk SMS) - Separate by comma")
+            message_bulk_sms = st.text_area("Bulk SMS Message")
+            if st.button("Send Bulk SMS Alert"):
+                send_bulk_sms([phone.strip() for phone in recipients_bulk_sms.split(",")], message_bulk_sms)
+
+        # Voice Call Alert
+        with voice_call_alert:
+            st.header("Voice Call Alerts")
+            recipient_voice_call = st.text_input("Recipient's Phone Number (Voice Call)")
+            if st.button("Make Voice Call"):
+                make_voice_call(recipient_voice_call)
+
+except Exception as e:
+        st.error(f"Error: {e}")
+
+
+
 try:
     data= yf.download(ticker, start=start_date, end=end_date)
     fig = px.line(data, x=data.index,y=data["Adj Close"], title=ticker)
