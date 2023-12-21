@@ -87,7 +87,8 @@ def make_voice_call(recipient):
     except Exception as e:
         st.error(f"Error making Voice Call: {e}")
 
- sms_alert, bulk_sms_alert, voice_call_alert = st.columns(3)
+
+sms_alert, bulk_sms_alert, voice_call_alert = st.columns(3)
 try:
     with sms_alert:
             st.header("SMS Alerts")
