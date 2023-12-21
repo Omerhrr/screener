@@ -33,7 +33,7 @@ def send_sms_alert(recipient, message):
             "message": message,
             "from_": "AFRICASTALKING",  # Replace with your sender ID
         }
-        response = sms.send(sms_payload)
+        response = sms.send(**sms_payload)
         st.success("SMS sent successfully!")
         st.write(response)
 
