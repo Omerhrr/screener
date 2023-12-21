@@ -94,11 +94,11 @@ try:
             send_bulk_sms([phone.strip() for phone in recipients_bulk_sms.split(",")], message_bulk_sms)
 
         # Voice Call Alert
-    with voice_call_alert:
-        st.header("Voice Call Alerts")
-        recipient_voice_call = st.text_input("Recipient's Phone Number (Voice Call)")
-        if st.button("Make Voice Call"):
-            make_voice_call(recipient_voice_call)
+   # with voice_call_alert:
+    #    st.header("Voice Call Alerts")
+     #   recipient_voice_call = st.text_input("Recipient's Phone Number (Voice Call)")
+      #  if st.button("Make Voice Call"):
+       #     make_voice_call(recipient_voice_call)
 
 except Exception as e:
         st.error(f"Error: {e}")
