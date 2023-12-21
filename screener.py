@@ -15,7 +15,7 @@ background_color = '''
 '''
 st.markdown(background_color, unsafe_allow_html=True)
 
-africastalking.initialize(username="SANDBOX", api_key="8e2c0773b93db3a6c8aeebe968efcce313e7e72d9ac850b97a7fb45af77f130d")
+africastalking.initialize(username="SANDBOX", api_key="2fbdeed761d98826d4cf9eef6638dc693fad278e89f9980a5b96c78a4caaf11d")
 
 
 st.title("Stock Dashboard")
