@@ -98,19 +98,19 @@ try:
                 send_sms_alert(recipient_sms, message_sms)
 
         # Bulk SMS Alert
-        with bulk_sms_alert:
-            st.header("Bulk SMS Alerts")
-            recipients_bulk_sms = st.text_area("Recipients (Bulk SMS) - Separate by comma")
-            message_bulk_sms = st.text_area("Bulk SMS Message")
-            if st.button("Send Bulk SMS Alert"):
-                send_bulk_sms([phone.strip() for phone in recipients_bulk_sms.split(",")], message_bulk_sms)
+    with bulk_sms_alert:
+        st.header("Bulk SMS Alerts")
+        recipients_bulk_sms = st.text_area("Recipients (Bulk SMS) - Separate by comma")
+        message_bulk_sms = st.text_area("Bulk SMS Message")
+        if st.button("Send Bulk SMS Alert"):
+            send_bulk_sms([phone.strip() for phone in recipients_bulk_sms.split(",")], message_bulk_sms)
 
         # Voice Call Alert
-        with voice_call_alert:
-            st.header("Voice Call Alerts")
-            recipient_voice_call = st.text_input("Recipient's Phone Number (Voice Call)")
-            if st.button("Make Voice Call"):
-                make_voice_call(recipient_voice_call)
+    with voice_call_alert:
+        st.header("Voice Call Alerts")
+        recipient_voice_call = st.text_input("Recipient's Phone Number (Voice Call)")
+        if st.button("Make Voice Call"):
+            make_voice_call(recipient_voice_call)
 
 except Exception as e:
         st.error(f"Error: {e}")
