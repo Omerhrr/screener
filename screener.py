@@ -57,18 +57,6 @@ def send_bulk_sms(recipients, message):
     except Exception as e:
         st.error(f"Error sending Bulk SMS: {e}")
 
-# Function to send news alerts
-def send_news_alerts(news_df):
-    try:
-        # Send News Alerts
-        for i in range(10):
-            news_message = f"{news_df['published'][i]}\n{news_df['title'][i]}\n{news_df['summary'][i]}"
-            send_sms_alert("RECIPIENT_PHONE_NUMBER", news_message)  # Replace with recipient's phone number
-
-        st.success("News alerts sent successfully!")
-
-    except Exception as e:
-        st.error(f"Error sending News Alerts: {e}")
 
 # Function to make voice call
 def make_voice_call(recipient):
