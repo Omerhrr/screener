@@ -29,9 +29,9 @@ def send_sms_alert(recipient, message):
         # Send SMS
         sms = africastalking.SMS
         sms_payload = {
-            "to": [f"+{recipient}"],
+            "recipients": [f"+{recipient}"],
             "message": message,
-            "from_": "AFRICASTALKING",  # Replace with your sender ID
+            "sender": "AFRICASTALKING",  # Replace with your sender ID
         }
         response = sms.send(**sms_payload)
         st.success("SMS sent successfully!")
