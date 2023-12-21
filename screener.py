@@ -46,9 +46,9 @@ def send_bulk_sms(recipients, message):
         # Send Bulk SMS
         sms = africastalking.SMS
         sms_payload = {
-            "to": recipients,
+            "recipients": recipients,
             "message": message,
-            "from_": "AFRICASTALKING",  # Replace with your sender ID
+            #"from_": "AFRICASTALKING",  # Replace with your sender ID
         }
         response = sms.send(**sms_payload)
         st.success("Bulk SMS sent successfully!")
@@ -59,24 +59,24 @@ def send_bulk_sms(recipients, message):
 
 
 # Function to make voice call
-def make_voice_call(recipient):
-    try:
+#def make_voice_call(recipient):
+ #   try:
         # Make Voice Call
-        voice = africastalking.Voice
-        voice_payload = {
-            "from_": "AFRICASTALKING",  # Replace with your sender ID
-            "to": [f"+{recipient}"],
-            "url": "URL_TO_VOICE_FILE_OR_API_ENDPOINT",  # Replace with your voice file or API endpoint
-        }
-        response = voice.call(voice_payload)
-        st.success("Voice Call initiated successfully!")
-        st.write(response)
+       # voice = africastalking.Voice
+       # voice_payload = {
+           # "from_": "AFRICASTALKING",  # Replace with your sender ID
+            #"to": [f"+{recipient}"],
+           # "url": "URL_TO_VOICE_FILE_OR_API_ENDPOINT",  # Replace with your voice file or API endpoint
+       # }
+       # response = voice.call(voice_payload)
+        #st.success("Voice Call initiated successfully!")
+        #st.write(response)
 
-    except Exception as e:
-        st.error(f"Error making Voice Call: {e}")
+    #except Exception as e:
+      #  st.error(f"Error making Voice Call: {e}")
 
 
-sms_alert, bulk_sms_alert, voice_call_alert = st.columns(3)
+sms_alert, bulk_sms_alert = st.columns(2)
 try:
     with sms_alert:
             st.header("SMS Alerts")
