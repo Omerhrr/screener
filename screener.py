@@ -50,7 +50,7 @@ def send_bulk_sms(recipients, message):
             "message": message,
             "from_": "AFRICASTALKING",  # Replace with your sender ID
         }
-        response = sms.send(sms_payload)
+        response = sms.send(**sms_payload)
         st.success("Bulk SMS sent successfully!")
         st.write(response)
 
